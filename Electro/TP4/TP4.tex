@@ -1,0 +1,403 @@
+\documentclass{report}
+\usepackage[pdftex]{graphicx}
+\usepackage{sidecap}
+\usepackage{fancyhdr}
+\usepackage{lscape}
+\usepackage[absolute]{textpos}
+\usepackage{amssymb}
+\usepackage{french}
+
+\title{Rapport : \\ \'Etude des circuits RLC}
+\author{Groupe : \\ Mattens Simon, Dom Eduardo \\ BAB2 Info}
+
+\date{\today}
+
+
+\begin{document}
+\maketitle
+
+\section*{1. Introduction}
+
+\hspace*{0,5cm} Le but de l'exp\'erience \'etait l'\'etude de circuits aliment\'es en tension alternative et comprenant des associations de r\'esistances; condensateurs et bobines.\\
+Celle-ci \'etait divis\'ee en deux manipulations principales:
+\begin{itemize}
+\item Etude d'un circuit RLC s\'erie (observation de la r\'esonance)
+\item Etude d'un circuit RL \& C en parall\`ele (observation de l'anti-r\'esonance)
+\end{itemize}
+
+\section*{2. R\'esum\'e th\'eorie}
+\subsection*{2.1 V\'erification th\'eorique}
+Avant de commencer la manipulation, une v\'erification \'etait demand\'ee: \\
+
+\textbf{\'Enonc\'e:} V\'erifier, par l'analyse dimensionnelle, que l'unit\'e de $\omega$L et de \\ 
+\hspace*{2,07cm}$1/(\omega$C) est l'Ohm $[\Omega]$ \\ 
+
+\textbf{R\'eponse:} \\
+
+\textbf{$\bullet\ \omega L$:} \\
+$$[\omega L] = \frac{1rad\cdot 1H}{1s} = \frac{1rad\cdot 1V\cdot 1s}{1A\cdot 1s\ }\textit{car\ } 1H = \frac{1V\cdot 1s}{1A}$$ 
+$$= \frac{1rad\cdot 1V}{1A} = \frac{1V}{1A}$$ \begin{center}
+\textit{car les angles sont des grandeurs sans dimensions} 
+$$ = 1\Omega,\ CQFD $$
+\end{center}
+
+\textbf{$\bullet\ 1/(\omega$C):} \\
+$$[\frac{1}{\omega C}] = \frac{1s}{1rad\cdot 1F} = \frac{1V\cdot 1s}{1rad\cdot 1C}\ \textit{car\ } 1F = \frac{1C}{1V}$$ 
+$$ = \frac{1V\cdot 1s}{1rad\cdot 1A\cdot 1s}\ \textit{car\ } 1C = 1A\cdot 1s $$
+$$= \frac{1V}{1rad\cdot 1A} = \frac{1V}{1A}$$ \begin{center}
+\textit{car les angles sont des grandeurs sans dimensions} 
+$$ = 1\Omega,\ CQFD $$
+\end{center}
+--- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---\\
+
+\subsection*{2.2 Rappels th\'eoriques n\'ecessaires aux calculs}
+$\bullet$Capacit\'e d'un circuit \`a la r\'esonance dans un circuit RLC s\'erie.
+$$ \omega^{2} = \frac{1}{L \cdot C},\ \omega \ etant\ la\ vitesse\ angulaire\ a\ la\ resonance $$
+\hspace*{0.2cm}Cf. page 6 de l'\'enonc\'e du labo.
+$$ \Longleftrightarrow C = \frac{1}{L \cdot \omega^{2}} $$
+$\bullet$L'intensit\'e maximale du courant (\`a la r\'esonance) dans un circuit RLC s\'erie.
+$$ I_{eff\ max} = \frac{U_{eff}}{R_{tot}} $$ 
+\hspace*{0.2cm}Cf. page 6 de l'\'enonc\'e du labo.\\ ~~\\
+$\bullet$Potentiel aux bornes de L et aux bornes de C.
+$$ U_{L} = Z_{L}\cdot I_{L},\ avec\ Z_{L} = \omega L,\ dans\ les\ reels $$ 
+$$ U_{C} = Z_{C}\cdot I_{C},\ avec\ Z_{C} = \frac{1}{\omega C},\ dans\ les\ reels $$
+\hspace*{0.2cm}Cf. page 3 de l'\'enonc\'e du labo.\\ ~~\\
+$\bullet$Intensit\'e du courant aux bornes de L et aux bornes de C.
+$$ \vert I_{L}\vert = \frac{\vert U_{L} \vert}{\omega L},\ dans\ les\ reels $$ 
+$$ \vert I_{C}\vert = \vert U_{C} \vert \cdot \omega C,\ dans\ les\ reels $$
+\hspace*{0.2cm}Cf. page 3 de l'\'enonc\'e du labo.\\ ~~\\
+$\bullet$Capacit\'e d'un circuit \`a l' anti-r\'esonance dans un circuit RLC en parall\`ele.
+$$ \omega^{2} = \frac{1}{L \cdot C},\ \omega \ etant\ la\ vitesse\ angulaire\ a\ la\ resonance $$
+\hspace*{0.2cm}Cf. page 9 de l'\'enonc\'e du labo.
+$$ \Longleftrightarrow C = \frac{1}{L \cdot \omega^{2}} $$
+$\bullet$L'intensit\'e minimale du courant (\`a l' anti-r\'esonance) dans un circuit RLC en parall\`ele.
+$$ I_{eff\ min} = \frac{U_{eff} \cdot R}{\omega L \cdot \sqrt{R^{2} + \omega^{2} L^{2}}} $$ 
+\newpage
+
+\section*{3 Dispositif exp\'erimental}
+
+\subsection*{3.1 Appareils de mesure}
+
+Voici quelques remarques sur les appareils de mesure utilis\'es: \\ ~~\\
+\textbf{$\circledcirc$Amp\`erem\`etres \`a aiguille} \\ ~~\\
+\hspace*{0,5cm}\ Nous avons utilis\'e deux niveaux de pr\'ecision sur ces appareils durant la manipulation.\ La r\'esistance interne de l'amp\`erem\`etre variait selon la pr\'ecision choisie. \\
+\hspace*{0,59cm} Les pr\'ecisions suivantes repr\'esentent la graduation la plus \'elev\'ee pour la mesure. \\
+
+\textbf{$\bullet$0,01A:} $Erreur\ absolue = \varepsilon_{A} = 2,5\% \cdot 0,01A = 0,00025A$ \\
+\hspace*{1,82cm} $Resistance\ interne = R_{amp} = 9,85\Omega $ \\
+
+\textbf{$\bullet$0,05A:} $Erreur\ absolue = \varepsilon_{A} = 2,5\% \cdot 0,05A = 0,00125A$ \\
+\hspace*{1,82cm} $Resistance\ interne = R_{amp} = 3,6\Omega $
+
+
+\subsection*{3.2 RLC s\'erie en tension alternative: r\'esonance}
+
+Nous avons r\'ealis\'e le circuit repr\'esent\'e par le sch\'ema suivant lors de l'exp\'erience \\
+
+\textbf{Sch\'ema de l'exp\'erience: }
+
+\begin{figure}[h!]
+\centering
+\caption{Source: \'enonc\'e du labo}
+\end{figure}
+
+\pagebreak
+
+\textbf{Conditions de travail: }
+
+\begin{figure}[h!]
+\centering
+\caption{Source: \'enonc\'e du labo}
+\end{figure}
+
+\subsection*{3.3 RL \& C en parall\`ele: anti-r\'esonance}
+
+Nous avons r\'ealis\'e le circuit repr\'esent\'e par le sch\'ema suivant lors de l'exp\'erience \\
+
+\textbf{Sch\'ema de l'exp\'erience: }
+\begin{figure}[h!]
+\centering
+\caption{Source: \'enonc\'e du labo}
+\end{figure}
+
+\textbf{Conditions de travail: }
+\begin{figure}[h!]
+\centering
+\caption{Source: \'enonc\'e du labo}
+\end{figure}
+
+\section*{4 Prise des mesures \& r\'esultats}
+
+\subsection*{4.1 RLC s\'erie en tension alternative: r\'esonance}
+
+\hspace*{0,5cm} Comme dit dans l'illustration du point 3.2, Nous avons effectu\'e nos mesures en faisant varier la capacit\'e du condensateur entre 0,1 et 1$\mu F$ par pas de 0,1$\mu F$, sauf lorsque l'on approchait du point de r\'esonance, alors, on avan\c cait par pas de 0,01$\mu F$.  \\
+
+\begin{tabular}{|c|c|c|c|}
+\hline
+\textbf{Capacit\'e} & \textbf{Intensit\'e du courant} & \textbf{Pr\'ecision amp\`erem\`etre} & \textbf{Erreur absolue} \\
+\hline
+0$\mu F$ & 0$A$ & --- & --- \\
+\hline
+0,1$\mu F$ & 0,0005$A$ & 0,01$A$ & 0,00025$A$ \\
+\hline
+0,2$\mu F$ & 0,0016$A$ & 0,01$A$ & 0,00025$A$ \\
+\hline
+0,3$\mu F$ & 0,0042$A$ & 0,01$A$ & 0,00025$A$ \\
+\hline
+0,4$\mu F$ & 0,0175$A$ & 0,05$A$ & 0,00125$A$ \\
+\hline
+0,41$\mu F$ & 0,0220$A$ & 0,05$A$ & 0,00125$A$\\
+\hline
+0,42$\mu F$ & 0,0295$A$ & 0,05$A$ & 0,00125$A$ \\
+\hline
+0,43$\mu F$ & 0,0385$A$ & 0,05$A$ & 0,00125$A$ \\
+\hline
+\textbf{0,44}$\mu F$ & \textbf{0,0440}$A$ & \textbf{0,05}$A$ & \textbf{0,00125}$A$ \\
+\hline
+0,45$\mu F$ & 0,0410$A$ & 0,05$A$ & 0,00125$A$ \\
+\hline
+0,46$\mu F$ & 0,0325$A$ & 0,05$A$ & 0,00125$A$ \\
+\hline\
+0,47$\mu F$ & 0,0260$A$ & 0,05$A$ & 0,00125$A$ \\
+\hline\
+0,48$\mu F$ & 0,0210$A$ & 0,05$A$ & 0,00125$A$ \\
+\hline\
+0,49$\mu F$ & 0,0180$A$ & 0,05$A$ & 0,00125$A$ \\
+\hline\
+0,5$\mu F$ & 0,0155$A$ & 0,05$A$ & 0,00125$A$ \\
+\hline
+0,6$\mu F$ & 0,0072$A$ & 0,01$A$ & 0,00025$A$ \\
+\hline
+0,7$\mu F$ & 0,0053$A$ & 0,01$A$ & 0,00025$A$ \\
+\hline
+0,8$\mu F$ & 0,0043$A$ & 0,01$A$ & 0,00025$A$ \\
+\hline
+0,9$\mu F$ & 0,0039$A$ & 0,01$A$ & 0,00025$A$ \\
+\hline
+1$\mu F$ & 0,0035$A$ & 0,01$A$ & 0,00025$A$ \\
+\hline
+\end{tabular}\\ ~~\\ ~~\\
+
+\pagebreak
+
+\subsection*{4.2 RL \& C en parall\`ele: anti-r\'esonance}
+
+\hspace*{0,5cm} Comme dit dans l'illustration du point 3.3, Nous avons effectu\'e nos mesures en faisant varier la capacit\'e du condensateur entre 0,1 et 1$\mu F$ par pas de 0,1$\mu F$, sauf lorsque l'on approchait du point d'anti-r\'esonance, alors, on avan\c cait par pas de 0,01$\mu F$. \\
+
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+\textbf{Capacit\'e} & \textbf{$I$} & \textbf{$I_C$} & \textbf{$I_L$} & \textbf{Pr\'ecision amp\`erem\`etre} & \textbf{Erreur absolue} \\
+\hline
+0$\mu F$ & 2,25$A$ & 0$A$ & 2,25$A$ & 0,05$A$|0,01$A$|0,05$A$ & 0,00125$A$|0,00025$A$|0,00125$A$ \\
+\hline
+0,1$\mu F$ & 1,75$A$ & 0,52$A$ & 2,25$A$ & 0,05$A$|0,01$A$|0,05$A$ & 0,00125$A$|0,00025$A$|0,00125$A$ \\
+\hline
+0,2$\mu F$ & 2,19$A$ & 0,99$A$ & 2,25$A$ & 0,05$A$|0,01$A$|0,05$A$ & 0,00125$A$|0,00025$A$|0,00125$A$ \\
+\hline
+0,3$\mu F$ & 0,75$A$ & 1,50$A$ & 2,25$A$ & 0,01$A$|0,05$A$|0,05$A$ & 0,00025$A$|0,00125$A$|0,00125$A$ \\
+\hline
+0,4$\mu F$ & 0,24$A$ & 2,00$A$ & 2,25$A$ & 0,01$A$|0,05$A$|0,05$A$ & 0,00025$A$|0,00125$A$|0,00125$A$ \\
+\hline
+0,41$\mu F$ & 0,19$A$ & 2,00$A$ & 2,25$A$ & 0,01$A$|0,05$A$|0,05$A$ & 0,00025$A$|0,00125$A$|0,00125$A$ \\
+\hline
+0,42$\mu F$ & 0,15$A$ & 2,00$A$ & 2,25$A$ & 0,01$A$|0,05$A$|0,05$A$ & 0,00025$A$|0,00125$A$|0,00125$A$ \\
+\hline
+0,43$\mu F$ & 0,11$A$ & 2,00$A$ & 2,25$A$ & 0,01$A$|0,05$A$|0,05$A$ & 0,00025$A$|0,00125$A$|0,00125$A$ \\
+\hline
+\textbf{0,44$\mu F$} & \textbf{0,09$A$} &\textbf{ 2,05$A$} & \textbf{2,25$A$} & \textbf{0,01$A$|0,05$A$|0,05$A$} & \textbf{0,00025$A$|0,00125$A$|0,00125$A$} \\
+\hline
+0,45$\mu F$ & 0,10$A$ & 2,20$A$ & 2,25$A$ & 0,01$A$|0,05$A$|0,05$A$ & 0,00025$A$|0,00125$A$|0,00125$A$ \\
+\hline
+0,46$\mu F$ & 0,14$A$ & 2,20$A$ & 2,25$A$ & 0,01$A$|0,05$A$|0,05$A$ & 0,00025$A$|0,00125$A$|0,00125$A$ \\
+\hline
+0,47$\mu F$ & 0,17$A$ & 2,25$A$ & 2,25$A$ & 0,01$A$|0,05$A$|0,05$A$ & 0,00025$A$|0,00125$A$|0,00125$A$ \\
+\hline
+0,48$\mu F$ & 0,22$A$ & 2,25$A$ & 2,25$A$ & 0,01$A$|0,05$A$|0,05$A$ & 0,00025$A$|0,00125$A$|0,00125$A$ \\
+\hline
+0,49$\mu F$ & 0,26$A$ & 2,45$A$ & 2,25$A$ & 0,01$A$|0,05$A$|0,05$A$ & 0,00025$A$|0,00125$A$|0,00125$A$ \\
+\hline
+0,5$\mu F$ & 0,31$A$ & 2,55$A$ & 2,25$A$ & 0,01$A$|0,05$A$|0,05$A$ & 0,00025$A$|0,00125$A$|0,00125$A$ \\
+\hline
+0,6$\mu F$ & 0,83$A$ & 2,95$A$ & 2,25$A$ & 0,01$A$|0,05$A$|0,05$A$ & 0,00025$A$|0,00125$A$|0,00125$A$ \\
+\hline
+0,7$\mu F$ & 1,30$A$ & 3,55$A$ & 2,25$A$ & 0,05$A$|0,05$A$|0,05$A$ & 0,00125$A$|0,00125$A$|0,00125$A$ \\
+\hline
+0,8$\mu F$ & 1,85$A$ & 3,95$A$ & 2,25$A$ & 0,05$A$|0,05$A$|0,05$A$ & 0,00125$A$|0,00125$A$|0,00125$A$ \\
+\hline
+0,9$\mu F$ & 2,35$A$ & 4,50$A$ & 2,25$A$ & 0,05$A$|0,05$A$|0,05$A$ & 0,00125$A$|0,00125$A$|0,00125$A$ \\
+\hline
+1$\mu F$ & 2,90$A$ & 5,00$A$ & 2,25$A$ & 0,05$A$|0,05$A$|0,05$A$ & 0,00125$A$|0,00125$A$|0,00125$A$ \\
+\hline
+
+
+\end{tabular}\\ ~~\\ ~~\\
+
+
+\pagebreak
+\section*{5 Analyse des r\'esultats}
+
+\subsection*{5.1 RLC s\'erie en tension alternative: r\'esonance}
+
+Nous avons donc fait varier la capacit\'e du condensateur, comme d\'ecrit au point pr\'ec\'edent, et mesur\'e l'intensit\'e du courant gr\^ace \`a l'amp\`erem\`etre \`a aiguille (repr\'esent\'e sur le sch\'ema du point pr\'ec\'edent). \\
+
+\textbf{Graphe de I en fonction de C: } \\ 
+(N.B. l'unit\'e de l'axe des ordonn\'ees est le centi\`eme d'amp\`ere).
+\begin{figure}[h]
+\centering
+\end{figure}
+
+Nous avons donc que la capacit\'e \`a laquelle le circuit atteint le point de r\'esonance est $0,44\mu F$ et que l'intensit\'e du courant en ce point vaut $0,04400A \pm 0,00125A$. \\
+L'erreur relative en ce point vaut: $$\frac{0,00125A}{0,04400A} = 0,02841$$
+
+\pagebreak
+
+\textbf{$\blacktriangleright$\'Enonc\'e:} Comparer la valeur de C pour laquele vous avez observ\'e \\
+\hspace*{2,35cm}la r\'esonance avec la valeur th\'eorique attendue. \\
+\hspace*{2,35cm}Observe-t-on une diff\'erence ? Si oui, expliquez. \\ 
+
+\textbf{$\vartriangleright$R\'eponse:} ~~\\ 
+
+$\circ$Nous savons que la capacit\'e du circuit \`a la r\'esonance vaut:
+$$ C = \frac{1}{L \cdot \omega^{2}} $$ 
+
+$\circ$Or, ici on a:
+$$ L = 1,458H\ ;\ \omega = 2\pi f = 2\pi \cdot 200 = 1256,64m/s^{2} $$
+
+$\circ$Donc, cel\`a nous donne:
+$$ C = \frac{1}{1,458 \cdot (1256,64)^{2}} = 0,000000434F = 0,434\mu F $$
+
+$\circ$La valeur observ\'ee exp\'erimentalement \'etait $0,44\mu F$\\
+\hspace*{0.75cm}L'erreur de 6 milli\`eme de $\mu F$ est expliqu\'ee par le fait qu'il nous \'etait \\ 
+\hspace*{0.75cm}demand\'e d'\^etre pr\'ecis au centi\`eme de $\mu F$ aux alentours du point de r\'esonance, \\
+\hspace*{0.75cm}et non au milli\`eme de $\mu F$. \\
+\hspace*{0.75cm}De plus, en jouant sur l'erreur absolue, on voit que notre r\'eponse est \\
+\hspace*{0.75cm}correcte.
+~~\\
+
+--- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- \\
+
+\textbf{$\blacktriangleright$\'Enonc\'e:} Comparer la valeur du courant obtenue \`a la r\'esonance avec la \\
+\hspace*{2,35cm}valeur th\'eorique. Doit-on tenir compte de la r\'esistance interne \\
+\hspace*{2,35cm}de l'amp\`erem\`etre dans le calcul ? \\ 
+
+\textbf{$\vartriangleright$R\'eponse:} ~~\\
+
+$\circ$Nous savons que l'intensit\'e du courant \`a la r\'esonance vaut :
+$$ I_{eff\ res} = \frac{U_{eff}}{R_{res}} $$ 
+
+$\circ$Or, nous savons qu'ici, $$U_{eff} = 3,5V\ ;\ R_{res} = R + R_{amp} = 75,78\Omega + 3,60\Omega = 79,38\Omega$$
+\hspace*{0.75cm}En effet, on doit tenir compte de la r\'esistance interne de l'amp\`erem\`etre\\
+\hspace*{0.75cm}\'etant donn\'e que c'est l'appareil de mesure. \\
+
+\pagebreak
+
+$\circ$Donc, cel\`a nous donne: $$ I_{eff\ res} = \frac{3,5V}{79,38\Omega} = 0,0440A $$
+\hspace*{0.75cm}Nous trouvons donc la m\^eme valeur que celle obtenue de fa\c con exp\'erimentale \\
+
+--- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- \\
+
+\textbf{$\blacktriangleright$\'Enonc\'e:} Calculer les valeurs th\'eoriquement attendues pour $U_{L}$ et $U_{C}$ \\
+\hspace*{2,35cm}\`a la r\'esonance et comparer aux valeurs mesur\'ees. \\
+
+\textbf{$\vartriangleright$R\'eponse:} ~~\\
+
+$\circ$Nous savons que:
+$$ U_{L} = Z_{L}\cdot I_{L},\ avec\ Z_{L} = \omega L,\ dans\ les\ reels $$ 
+$$ U_{C} = Z_{C}\cdot I_{C},\ avec\ Z_{C} = \frac{1}{\omega C},\ dans\ les\ reels $$
+$$ L = 1,458H\ et\ \omega = 2\pi f = 2\pi \cdot 200Hz = 1256,637rad $$
+
+$\circ$Comme nous somme \`a la r\'esonance;
+$$ I_{L} = I_{C} = 0,0440A $$
+$$ C = 0,44\mu F = 0,00000044F $$
+
+$\circ$Donc, on a:
+$$ Z_{L} = 1256,637rad \cdot 1,458H = 1832,177\Omega $$
+$$ Z_{C} = \frac{1}{1256,637rad \cdot 0,00000044 F} = 1808,579\Omega $$
+
+$\circ$Enfin, on trouve:
+$$ U_{L} = 1832,177\Omega \cdot 0,04400A = 80,619V$$
+$$ U_{C} = 1808,579\Omega \cdot 0,04400A = 79,578V$$
+
+
+\newpage
+
+\subsection*{5.2 RL \& C en parall\`ele: anti-r\'esonance}
+
+Nous avons donc fait varier la capacit\'e du condensateur, comme d\'ecrit au point pr\'ec\'edent, et mesur\'e $I_{C}$, $I_{L}$ et $I$ gr\^ace aux amp\`ereme\`etres \`a aiguille (repr\'esent\'es sur le sch\'ema du point pr\'ec\'edent). \\
+
+\textbf{Graphe des I en fonction de C:} \\ 
+(N.B. l'unit\'e de l'axe des ordonn\'ees est le centi\`eme d'amp\`ere) 
+\begin{figure}[h]
+\centering
+\end{figure}
+
+\hspace*{0.5cm}Nous avons donc que la capacit\'e \`a laquelle le circuit atteint le point d'anti-r\'esonance est $0,44\mu F$ et qu'en ce point: 
+$$I = 0,00090A \pm 0,00025A,\ erreur\ relative\ = \frac{0,00025}{0,00090} = 0,278$$
+$$I_C = 0,02050A \pm 0,00125A,\ erreur\ relative\ = \frac{0,00125}{0,02050} = 0,061$$
+$$I_L = 0,02250A \pm 0,00125A,\ erreur\ relative\ = \frac{0,00125}{0,02250} = 0,056$$
+
+\pagebreak
+
+\textbf{$\blacktriangleright$\'Enonc\'e:} Justifier l'allure des courbes \`a partir de la partie th\'eorique \\
+
+\textbf{$\vartriangleright$R\'eponse:}  \\ 
+
+$\circ$En ce qui concerne $I_{L}$, sa formule (cf. point 2.2) ne d\'epend en aucun cas\\ \hspace*{0.75cm}de C, c'est donc normal que sa valeur reste la m\^eme tandis que C varie.\\
+
+$\circ$Pour $I_{C}$, sa formule (voir point 2.2) nous dit qu'elle est directement\\ \hspace*{0.75cm}proportionnelle \`a C, il est donc normal qu'elle cro\^it avec C. \\
+
+$\circ$Enfin, $I_{res}$ d\'ecro\^it jusqu'\`a un minimum avant de cro\^itre de nouveau, comme\\
+\hspace*{0.75cm}pr\'evu par le ph\'enom\`ene d'anti-r\'esonance. \\
+
+--- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- \\
+
+\textbf{$\blacktriangleright$\'Enonc\'e:} Calculer la valeur de C correspondant \`a l'anti-r\'esonance et \\
+\hspace*{2,35cm}comparer \`a la valeur exp\'erimentale. \\
+
+\textbf{$\vartriangleright$R\'eponse:} \\
+
+$\circ$Nous savons que la capacit\'e du circuit \`a l'anti-r\'esonance vaut:
+$$ C = \frac{1}{L \cdot \omega^{2}} $$ 
+
+$\circ$Or, ici on a:
+$$ L = 1,458H\ ;\ \omega = 2\pi f = 2\pi \cdot 200 = 1256,64m/s^{2} $$
+
+$\circ$Donc, cel\`a nous donne:
+$$ C = \frac{1}{1,458 \cdot (1256,64)^{2}} = 0,000000434F = 0,434\mu F $$
+
+$\circ$La valeur observ\'ee exp\'erimentalement \'etait $0,44\mu F$\\
+\hspace*{0.75cm}L'erreur de 6 milli\`eme de $\mu F$ est expliqu\'ee par le fait qu'il nous \'etait \\ 
+\hspace*{0.75cm}demand\'e d'\^etre pr\'ecis au centi\`eme de $\mu F$ aux alentours du point de r\'esonance, \\
+\hspace*{0.75cm}et non au milli\`eme de $\mu F$. \\
+\hspace*{0.75cm}De plus, en jouant sur l'erreur absolue, on voit que notre r\'eponse est \\
+\hspace*{0.75cm}correcte
+~~\\
+
+--- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- \\
+
+\newpage
+
+\textbf{$\blacktriangleright$\'Enonc\'e:} Calculer la valeur minimale attendue pour I et comparer \`a la \\
+\hspace*{2,35cm}valeur exp\'erimentale. + En d\'eduire la valeur de la r\'esistance \\
+\hspace*{2,35cm}\'equivalente du circuit antir\'esonant et comparer \`a la valeur \\
+\hspace*{2,35cm}exp\'erimentale.\\
+
+\textbf{$\vartriangleright$R\'eponse:} \\ ~~\\
+$\circ$Nous savons que 
+$$ I_{eff\ min} = \frac{U_{eff} \cdot R}{\omega L \cdot \sqrt{R^{2} + \omega^{2} L^{2}}} $$ 
+$\circ$Or, nous avons ici
+$$\omega = 1256,64m/s^{2}\ (voir\ calculs\ precedent),\ U_{eff} = 40V,\ R = 75,78\Omega,\ L = 1,458H$$
+$\circ$Donc,
+$$ I_{eff\ min} = \frac{40 \cdot 75,78}{1256,64 \cdot 1,458 \cdot \sqrt{75,78^{2} + 1256,64^{2} \cdot 1,458^{2}}}$$
+$$  = \frac{3031,2}{1832,18 \cdot \sqrt{3362630,26}} = 0,00090A $$
+
+Ce qui correspond parfaitement \`a la valeur ep\'erimentale.\\ ~~\\
+$\circ$On peut en d\'eduire la r\'esistance effective du circuit par la formule suivante :
+$$ R_{eff} = \frac{U_{eff}}{I_{eff}} $$
+$$ \Longleftrightarrow R_{eff} = \frac{40}{0,00090} = 44444,44\Omega$$
+\section*{6 Conclusion}
+\hspace*{1cm}Nous avons exp\'eriment\'e le comportement de deux circuits RLC dispos\'es diff\'eremment: un en s\'erie, l'autre en parall\`ele. \\
+\hspace*{1cm}Dans le premier, nous avons observ\'e le ph\'enom\`ene de r\'esonance, c\`ad l'existence d'une intensit\'e de courant maximale pour certaines valeurs. Dans ce cas, nous avons fait varier la capacit\'e du circuit pour atteindre la capacit\'e de r\'esoncance.\\
+\hspace*{1cm}Dans le second, nous avons observ\'e le ph\'enom\`ene d'anti-r\'esonance, c\`ad l'existence d'une intensit\'e de courant minimale pour certaines valeurs. Dans ce cas, nous avons fait varier la capacit\'e du circuit pour atteindre la capacit\'e d' anti-r\'esoncance.\\
+
+\end{document}
