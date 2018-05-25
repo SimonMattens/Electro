@@ -1,4 +1,5 @@
 \documentclass{report}
+\usepackage[utf8]{inputenc}
 \usepackage{graphicx}
 \usepackage{sidecap}
 \usepackage{fancyhdr}
@@ -82,29 +83,24 @@ La r\'esistance \'electrique d\'etermine l'intensit\'e du courant traversant le 
 \section*{3 Dispositif exp\'erimental}
 \subsection*{3.1 Mat\'eriel utilis\'e}
 \begin{itemize}
-\item R\'esistances et condensateurs de type \'electrolytique  ainsi qu'une plaque de r\'ealisation de circuits.
+\item Eléments R, L et C et plaque de réalisation de circuits 
+Nous disposons de  plusieurs  résistances, selfs (ou  bobines) et condensateurs à fixer sur une plaquette d'essai. 
 
-\item Un g\'en\'erateur de tension continue (de 0 \`a 30 V) r\'eglable via les deux potentiom\`etres : COARSE et FINE.
+\item Circuit RC  à longue constante de temps : carte ARDUINO + PC. L’alimentation en tension  continue(0 -5  V)  ainsi  que  le voltmètre mesurant la  tension  aux bornes du condensateur seront fournis par une carte d’acquisition ARDUINO UNO pilotée via PC.  
 
-\item Un multim\`etre de marque Keithley de type 2010 utilis\'e en voltm\`etre. Il est \'equip\'e d'une sortie IEEE.
-
-\item PC d'acquisition pour utiliser le logiciel LabView. Le PC est reli\'e au voltm\`etre et \`a la carte d'acquisition GPIB au moyen d'un c\^able de type GPIB.
+\item Circuits RC et RL à constante de temps courte : générateur de signaux + oscillo. Pour  les  circuits  à  constante  de  temps  rapide,  il  est  impossible  d'observer "à l'œil" la croissance  (ou  décroissance)  de  la tension  aux  bornes  du  condensateur (circuit  RC)  ou  de  la tension  aux bornes de  R  (circuit  RL).
 
 \item Un g\'en\'erateur de tension alternative de forme carr\'ee. Celui-ci permet de stabiliser le comportement du circuit.
 
 \item Un oscilloscope.
 \end{itemize}
 
-\subsection*{3.2 Conditions de mesure pour le VI}
-\hspace*{0.5cm}
-La pr\'ecision de lecture a \'et\'e fix\'ee \`a digits 2 (=5 1/2 digits de r\'esolution. Le wait time - le temps entre chaque mesure - est de 5 secondes. Le pourcentage de charge totale est de 0.97 et le pourcentage de d\'echarge (r\'eglant les arr\^et mesure) est \`a 0.03. La tension appliqu\'ee est de 10V.
-\pagebreak
 \section*{4 Prise des mesures \& r\'esultats}
 \subsection*{4.1 Charge d'un condensateur \`a travers une r\'esistance}
 \hspace*{0.5cm}
 \begin{figure}[ht!]
 \centering
-\includegraphics[width=90mm]{chargeCond.jpg}
+\includegraphics[width=90mm]{charge.png}
 \label{overflow}
 \end{figure}
 \\
@@ -114,7 +110,7 @@ Nous constatons que le condensateur charge plus vite au d\'ebut de la manipulati
 \subsection*{4.2 D\'echarge d'un condensateur \`a travers une r\'esistance}
 \begin{figure}[ht!]
 \centering
-\includegraphics[width=90mm]{dechargeCond.jpg}
+\includegraphics[width=90mm]{decharge.png}
 \label{overflow}
 \end{figure}
 \hspace*{0.5cm}
@@ -123,15 +119,9 @@ Nous constatons que le condensateur se d\'echarge plus vite au d\'ebut de la man
 \section*{5. Analyse des r\'esultats}
 \begin{figure}[ht!]
 \centering
-\includegraphics[width=90mm]{analyse2.jpg}
+\includegraphics[width=90mm]{chargeEtDech.png}
 \label{overflow}
 \end{figure}
-\begin{figure}[ht!]
-\centering
-\includegraphics[width=90mm]{analyse1.jpg}
-\label{overflow}
-\end{figure}
-\hspace*{0.5cm}
 Les courbes s'intersectent \`a la demi-vie $\tau$ de la charge et de la d\'echarge du condensateur. C'est le temps n\'ecessaire pour que la tension aux bornes du condensateur atteigne la moiti\'e de sa valeur maximale.
 \subsection*{5.1 Analyse dimensionnelle de la constante de temps $\tau$ }
 V\'erifions que $\tau$ = RC a bien des unit\'es de temps.
@@ -263,88 +253,16 @@ Pour calculer cette r\'esistance interne, nous savons que :
 \hspace*{0.5cm}
 Nous avons remplac\'e la capacit\'e par 2 capacit\'es en s\'erie. Nous avons observer la d\'echarge. Nous avons \'egalement mesur\'e la demi-vie.
 \begin{equation}
-   T_{1/2} = \frac{0,2}{5}
+   T_{1/2} = 40\mu s
 \end{equation}
-
-Comme les deux capacit\'es de 0,1\micro F sont mont\'ees en s\'erie, nous pouvons calculer th\'eoriquement C equivalent:
-
-\begin{equation}
-   \frac{1}{C_{eq}} =  \frac{1}{C_{1}}+\frac{1}{C_{2}}
-\end{equation}
-
-\begin{equation}
-   \Leftrightarrow C_{eq} =  (\frac{1}{0,1 \cdot 10^{-6}}+\frac{1}{0,1 \cdot 10^{-6}})^{-1}
-\end{equation}
-
-\begin{equation}
-   \Leftrightarrow C_{eq} = 5 \cdot 10^{-8} F
-\end{equation}
-\begin{equation}
-   \Leftrightarrow C_{eq} = 0,05 \micro F
-\end{equation}
-\pagebreak
-\\
-Calculons maintenant C \'equivalent avec les valeurs empiriques.
-\begin{equation}
-    C_{eq} = \frac{\tau}{R}
-\end{equation}
-\begin{equation}
-    \Leftrightarrow C_{eq} = \frac{\frac{T_{1/2}}{ln(2)}}{R}
-\end{equation}
-\begin{equation}
-    \Leftrightarrow C_{eq} = \frac{0,2}{5 \cdot ln(2) \cdot R}
-\end{equation}
-\begin{equation}
-    \Leftrightarrow C_{eq} = \frac{0,2}{5 \cdot ln(2) \cdot 865617.0245}
-\end{equation}
-\begin{equation}
-    \Leftrightarrow C_{eq} = 6.66666686\cdot 10^{-8}
-\end{equation}
-\begin{equation}
-    \Leftrightarrow C_{eq} = 0.066 \micro F
-\end{equation}
-Nous constatons que la diff\'erence de valeur entre C \'equivalent calcul\'e avec les valeurs empiriques et l'autre sont sensiblement proches. En effet, il n'y a que 0,016 \micro F de diff\'erence.
+Le condensateur se décharge plus vite.
 \subsection*{7.2 Capacit\'es mont\'ees en parall\`eles}
 \hspace*{0.5cm}
 Nous avons remplac\'e la capacit\'e par 2 capacit\'es en parall\`eles. Nous avons observer la d\'echarge. Nous avons \'egalement mesur\'e la demi-vie.
 \begin{equation}
-   T_{1/2} = \frac{0,6}{5}
+   T_{1/2} = 116\mu s
 \end{equation}
-Comme les deux capacit\'es de 0,1\micro F sont mont\'ees en parall\`eles, nous pouvons calculer th\'eoriquement C equivalent:
-\begin{equation}
-    C_{eq} = C_1 + C_2
-\end{equation}
-\begin{equation}
-    C_{eq} = 0,1 \cdot 10^{-6} +  0,1 \cdot 10^{-6}
-\end{equation}
-\begin{equation}
-    C_{eq} = 2 \cdot 10^{-7}
-\end{equation}
-\begin{equation}
-    C_{eq} = 0,2 \micro F
-\end{equation}
-
-Calculons maintenant C \'equivalent avec les valeurs empiriques.
-\begin{equation}
-    C_{eq} = \frac{\tau}{R}
-\end{equation}
-\begin{equation}
-    \Leftrightarrow C_{eq} = \frac{\frac{T_{1/2}}{ln(2)}}{R}
-\end{equation}
-\begin{equation}
-    \Leftrightarrow C_{eq} = \frac{0,6}{5 \cdot ln(2) \cdot R}
-\end{equation}
-\begin{equation}
-    \Leftrightarrow C_{eq} = \frac{0,6}{5 \cdot ln(2) \cdot 865617.0245}
-\end{equation}
-\begin{equation}
-    \Leftrightarrow C_{eq} = 2 \cdot 10^{-7}
-\end{equation}
-\begin{equation}
-    \Leftrightarrow C_{eq} = 0,2 \micro F
-\end{equation}
-On constate que la valeur de C calcul\'e empiriquement est \'egale \`a la valeur de C calcul\'e th\'eoriquement.
-
+Le condensateur met plus de temps à se décharger.
 \section*{6 Conclusion}
 \hspace*{0.5cm}
 Nous avons \'etudi\'e la charge et la d\'echarge exponentielle d'un condensateur C \`a travers une r\'esistance R visualis\'ee au moyen du programme LabView. On a aussi v\'erifi\'e la loi exp\'erimentale de la loi d'association de capacit\'es en s\'erie et en parall\`ele.\\
