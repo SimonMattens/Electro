@@ -1,5 +1,7 @@
 \documentclass{report}
+\usepackage[utf8]{inputenc}
 \usepackage{graphicx}
+\usepackage{grffile}
 \usepackage{sidecap}
 \usepackage{fancyhdr}
 \usepackage{lscape}
@@ -7,7 +9,6 @@
 \usepackage{SIunits}
 \usepackage{sistyle}
 \usepackage{amsmath}
-\usepackage{french}
 
 \makeatletter
 \def\maketitle{%
@@ -29,7 +30,6 @@
 \makeatother
 \author{Groupe : Mattens Simon, Dom Eduardo \\ BAB2 Sciences Informatiques}
 \title{Rapport : Mesures au moyen d'un oscilloscope}
-\date{\today}
 
 
 \begin{document}
@@ -130,13 +130,43 @@ Nous pouvons v\'erifier notre relation en utilisant les valeurs mesur\'ees:
 Notons que Umax n'est pas \'egale \`a 2 d\^u \`a l'erreur de mesure.
 \\
 
-Nous avons mesur\'e la tension efficace du signal triangulaire qui est de 1.235 Volts et la tension efficace du signal carr\'e de 2.27 Volts.
+Nous avons mesur\'e la tension efficace du signal triangulaire qui est de 1.235 Volts et la tension efficace du signal carr\'e de 2.27 Volts. \\
+Ci-dessous nous avons comparés les valeurs obtenues via 2 types de multimètre(un avec true rms et un sans).
+\begin{table}[h]
+\begin{tabular}{|c|c|c|c|c|}
+  \hline
+   & Umax & Ueff sinus & Ueff triang & Ueff carré \\
+  \hline
+  Appareil de mesure & oscillo & Multimètre & Multimètre & Multimètre \\
+  \hline
+  Valeur mesurée & 4V & 2.72V & 2.42V & 4.45V \\
+  \hline
+  Valeur calculée & / & 2.82V & 2.3V & 4V \\
+  \hline
+\end{tabular}
+\caption{Sans TRUE RMS}
+\end{table}
+
+\begin{table}[h]
+\begin{tabular}{|c|c|c|c|c|}
+  \hline
+   & Umax & Ueff sinus & Ueff triang  & Ueff carré \\
+  \hline
+  Appareil de mesure & oscillo & Multimètre & Multimètre & Multimètre \\
+  \hline
+  Valeur mesurée & 4V & 2.74V & 2.52V & 3.88V \\
+  \hline
+  Valeur calculée & / & 2.82V & 2.3V & 4V \\
+  \hline
+\end{tabular}
+\caption{Avec TRUE RMS}
+\end{table}
 
 \subsection*{4.2) E1.3.2: \'Etude d'un circuit redresseur simple (1 diode)}
 \hspace*{0.5cm}
 \begin{figure}[ht!]
 \centering
-\includegraphics[width=90mm]{circuitE1.3.2.jpg}
+\includegraphics[width=90mm]{circuitE1.3.2.png}
 \caption{Circuit redresseur simple}
 \label{overflow}
 \end{figure}
@@ -158,7 +188,7 @@ Nous constatons que le calcul de la tension aux bornes de la r\'esistance Ur est
 \hspace*{0.5cm}
 \begin{figure}[ht!]
 \centering
-\includegraphics[width=90mm]{circuitE1.3.3.jpg}
+\includegraphics[width=90mm]{circuitE1.3.3.png}
 \caption{circuit redresseur de pont sans capacit\'e (circuit 1) et avec capacit\'e (circuit 2)}
 \label{overflow}
 \end{figure}
@@ -167,11 +197,11 @@ Nous constatons que le calcul de la tension aux bornes de la r\'esistance Ur est
 Nous avons utilis\'e le circuit redresseur en pont pour visualiser le signal au bornes de R gr\^ace \`a l'oscilloscope. Ensuite, nous avons plac\'e , en s\'erie, une capacit\'e de 5 \micro F pour observer l'effet sur la forme du courant obtenu. On pr\'evoit que le courant, aux abords de la r\'esistance, va diminuer sensiblement.
 Le but final est d'avoir du courant continu.
 
-\subsection*{4.4) E1.3.4: Visualisation de 2 signaux sinuso\¨idaux de m\^eme fr\'equence d\'ephas\'es}
+\subsection*{4.4) E1.3.4: Visualisation de 2 signaux sinusoïdaux de même fréquence déphasée}
 \hspace*{0.5cm}
 \begin{figure}[ht!]
 \centering
-\includegraphics[width=90mm]{circuitE1.3.4.jpg}
+\includegraphics[width=90mm]{circuitE1.3.4.png}
 \caption{Circuit RC}
 \label{overflow}
 \end{figure}
@@ -242,7 +272,7 @@ Apr\`es avoir lu attentivement la m\'ethode de calcul pour calculer le d\'ephasa
 \hspace*{0.5cm}
 \begin{figure}[ht!]
 \centering
-\includegraphics[width=90mm]{circuitE1.3.5.jpg}
+\includegraphics[width=90mm]{circuitE1.3.5.png}
 \caption{Ellipse observ\'ee}
 \label{overflow}
 \end{figure}
@@ -277,7 +307,7 @@ La principale difficult\'e a \'et\'e de pouvoir stabiliser les figures de Lissaj
 \hspace*{0.5cm}
 \begin{figure}[ht!]
 \centering
-\includegraphics[width=90mm]{circuitE1.3.6.jpg}
+\includegraphics[width=90mm]{circuitE1.3.6.png}
 \caption{Figures de Lissajous observ\'es}
 \label{overflow}
 \end{figure}
@@ -295,13 +325,6 @@ Or 1/5 de 2 est \'egale \`a 0,4. De ce fait, notre solution doit appartenir à l
 
 \subsection*{5.2) E1.3.2: \'Etude d'un circuit redresseur simple (1 diode)}
 \hspace*{0.5cm}
-\begin{figure}[ht!]
-\centering
-\includegraphics[width=90mm]{graphiqueE1.3.2.jpg}
-\caption{Graphique du temps en fonction de la tension et graphique du temps en fonction de l'intensit\'e du courant}
-\label{overflow}
-\end{figure}
-\\
 
 Nous constatons que la tension oscille entre -12 et 12 Volts. La p\'eriode est de 0,02 seconde. Lorsque la tension est positive, l'intensit\'e l'est aussi. Par contre, lorsque la tension est n\'egative, l'intensit\'e du courant reste constante et est \'egale \`a 0.
 
@@ -312,12 +335,6 @@ Il y a sur le circuit redresseur simple une diode mont\'ee en s\'erie. Une diode
 
 \subsection*{5.3) E1.3.3: \'Etude d'un circuit redresseur en pont}
 \hspace*{0.5cm}
-\begin{figure}[ht!]
-\centering
-\includegraphics[width=90mm]{graphiqueE1.3.3.jpg}
-\caption{Graphique(a) du temps en fonction de la tension sans capacit\'e et graphique(b) du temps en fonction de la tension avec une capacit\'e.}
-\label{overflow}
-\end{figure}
 \\
 
 Nos pr\'evisions \'etaient bonnes. Le courant diminue bien lorsqu'il passe dans la r\'esistance (\`a partir de 0,5ms). Avec la pr\'esence d'un condensateur dans le circuit, la diminution est moins importante et surtout, la tension ne revient pas \`a 0.
