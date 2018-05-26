@@ -1,0 +1,73 @@
+\documentclass{report}
+\usepackage[utf8]{inputenc}
+\usepackage[pdftex]{graphicx}
+\usepackage{sidecap}
+\usepackage{fancyhdr}
+\usepackage{lscape}
+\usepackage[absolute]{textpos}
+\usepackage{amssymb}
+\title{Rapport: Circuits RLC en tension carrée et sinusoïdale}
+\author{Groupe : \\ Mattens Simon, Dom Eduardo \\ BAB2 Sciences Informatiques}
+\begin{document}
+\maketitle
+
+\section*{1. Introduction}
+
+\hspace*{0,5cm} Le  but  de  la  manipulation  est  l'étude  de  circuits  alimentés  en  tension  alternative 
+(carrée  et 
+sinusoïdale) 
+comprenant 
+des  associations  de  résistances  (R),  condensateurs  (capacités  C)  et 
+bobines d'induction (L).
+
+\section*{2. R\'esum\'e th\'eorie}
+\subsection*{2.1 Rappels th\'eoriques n\'ecessaires aux calculs}
+$\bullet$Capacit\'e d'un circuit \`a la r\'esonance dans un circuit RLC s\'erie.
+$$ \omega^{2} = \frac{1}{L \cdot C},\ \omega \ etant\ la\ vitesse\ angulaire\ a\ la\ resonance $$
+
+$$ \Longleftrightarrow C = \frac{1}{L \cdot \omega^{2}} $$
+$\bullet$L'intensit\'e maximale du courant (\`a la r\'esonance) dans un circuit RLC s\'erie.
+$$ I_{eff\ max} = \frac{U_{eff}}{R_{tot}} $$ 
+
+$\bullet$Potentiel aux bornes de L et aux bornes de C.
+$$ U_{L} = Z_{L}\cdot I_{L},\ avec\ Z_{L} = \omega L,\ dans\ les\ reels $$ 
+$$ U_{C} = Z_{C}\cdot I_{C},\ avec\ Z_{C} = \frac{1}{\omega C},\ dans\ les\ reels $$
+
+$\bullet$Intensit\'e du courant aux bornes de L et aux bornes de C.
+$$ \vert I_{L}\vert = \frac{\vert U_{L} \vert}{\omega L},\ dans\ les\ reels $$ 
+$$ \vert I_{C}\vert = \vert U_{C} \vert \cdot \omega C,\ dans\ les\ reels $$
+
+$\bullet$Capacit\'e d'un circuit \`a l' anti-r\'esonance dans un circuit RLC en parall\`ele.
+$$ \omega^{2} = \frac{1}{L \cdot C},\ \omega \ etant\ la\ vitesse\ angulaire\ a\ la\ resonance $$
+
+$$ \Longleftrightarrow C = \frac{1}{L \cdot \omega^{2}} $$
+$\bullet$L'intensit\'e minimale du courant (\`a l' anti-r\'esonance) dans un circuit RLC en parall\`ele.
+$$ I_{eff\ min} = \frac{U_{eff} \cdot R}{\omega L \cdot \sqrt{R^{2} + \omega^{2} L^{2}}} $$ 
+
+\section*{3. Manipulation}
+\subsection*{3.1 Etude théorique d'un circuit (R)LC : oscillations sinusoïdales}
+Considérons un circuit  LC  avec  L  =  0,1H  et  C  =  4300 pF.
+Calculons la valeur de la période d’oscillation propre du circuit. \\
+
+$$ T =  \frac{2 \pi}{\omega_{0}} = 2 \pi \sqrt{LC} = 6.283 $$ \\
+
+En tenant compte  de la  résistance  du  générateur (RG =  50 $\Omega$) et  de  celle de  la  bobine  (à mesurer): \\
+$$ R_{L} = 65.3 \ \pm \ 6.66 \Omega \ (\approx 100 \Omega) $$
+
+\subsection*{3.2 Circuit RLC série en tension carrée: mesures en régime transitoire}
+1) La période du signal carré (répétition du phénomène ON - OFF): $T_{GS}$ = 9.94ms. \\
+2) La période des oscillations : $T_{0}$ = 66.5ms.\\
+3) Le temps de demi-vie de l'enveloppe exponentielle des amplitudes : $T_{1/2} = 157 \mu s$. \\
+4) Donc , le temps de relaxation $\tau = 226.5 \mu s$ . \\
+5) En examinant le schéma  du circuit, on détermine la valeur de $R_{TOT} = 560 + 65.9 + 50 = 675.9 \Omega$. On ne doit pas tenir compte de la résistance de l'oscillo car aucun courant ne passe par l'oscillo. \\
+6) Ci-dessous, le tableau contenant les différents nombres d'oscillations observées en remplaçant la résistance de 560$\Omega$ par des résistances de valeurs différentes. \\
+
+\begin{tabular}{|c|c|c|c|c|}
+  \hline
+  R = & 22$\Omega$ & 216$\Omega$ & 560$\Omega$  & 1500$\Omega$ \\
+  \hline
+  Nombre d'oscillations observées & 40.5 & 27.3 & 16.3 & 8.09 \\
+  \hline
+\end{tabular}
+
+\end{document}
