@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2018.5.24)  25 MAY 2018 16:57
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2018.5.24)  26 MAY 2018 23:39
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -575,15 +575,6 @@ LaTeX Warning: Label `overflow' multiply defined.
 
 LaTeX Warning: Label `overflow' multiply defined.
 
-
-LaTeX Warning: Label `overflow' multiply defined.
-
-
-LaTeX Warning: Label `overflow' multiply defined.
-
-
-LaTeX Warning: Label `overflow' multiply defined.
-
 )
 \openout1 = `rapport.aux'.
 
@@ -694,105 +685,82 @@ LaTeX Info: Redefining \selectfont on input line 126.
 )
 ABD: EveryShipout initializing macros [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-Overfull \hbox (14.71252pt too wide) in paragraph at lines 40--41
-\OT1/cmr/m/n/10 r^^Sesistance R vi-su-alis^^See au moyen du pro-gramme in-for-m
-a-tique Lab-View. V^^Serification
- []
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] <cond.png, id=8, 496.4949p
+t x 87.4467pt>
+File: cond.png Graphic file (type png)
+ <use cond.png>
+Package pdftex.def Info: cond.png used on input line 49.
+(pdftex.def)             Requested size: 256.0748pt x 45.10292pt.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 55.
 
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 71.
 (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 71.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 55.
 
-Overfull \hbox (25.85948pt too wide) in paragraph at lines 89--90
+Overfull \hbox (2.82465pt too wide) in paragraph at lines 76--79
+\OT1/cmr/m/n/10 Une bobine est form^^See d'un fil con-duc-teur en-roul^^Se for-
+mant des spires. ^^Ra l'int^^Serieur
+ []
+
+<bobine.png, id=10, 221.1462pt x 91.7829pt>
+File: bobine.png Graphic file (type png)
+ <use bobine.png>
+Package pdftex.def Info: bobine.png used on input line 85.
+(pdftex.def)             Requested size: 256.0748pt x 106.28896pt.
+ [2 <./cond.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 89--91
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 92--103
+
+ []
+
+
+Overfull \hbox (25.85948pt too wide) in paragraph at lines 109--110
 []\OT1/cmr/m/n/10 Circuit RC ^^Ra longue con-stante de temps : carte AR-DUINO +
  PC. L'alimentation
  []
 
-[2] <charge.png, id=20, 328.97906pt x 249.18094pt>
+[3 <./bobine.png>] <charge.png, id=29, 328.97906pt x 249.18094pt>
 File: charge.png Graphic file (type png)
- <use charge.png>
-Package pdftex.def Info: charge.png used on input line 103.
+
+<use charge.png>
+Package pdftex.def Info: charge.png used on input line 129.
 (pdftex.def)             Requested size: 256.0748pt x 193.9649pt.
- [3 <./charge.png>] <decharge.png, id=24, 313.9228pt x 240.14719pt>
+ [4 <./charge.png>]
+<decharge.png, id=33, 313.9228pt x 240.14719pt>
 File: decharge.png Graphic file (type png)
  <use decharge.png>
-Package pdftex.def Info: decharge.png used on input line 113.
+Package pdftex.def Info: decharge.png used on input line 138.
 (pdftex.def)             Requested size: 256.0748pt x 195.90326pt.
-
-[4 <./decharge.png>] <chargeEtDech.png, id=28, 494.59781pt x 296.60812pt>
-File: chargeEtDech.png Graphic file (type png)
-
-<use chargeEtDech.png>
-Package pdftex.def Info: chargeEtDech.png used on input line 122.
-(pdftex.def)             Requested size: 256.0748pt x 153.56728pt.
- <3-1graph243.jpg, id=29, 1022.82124pt x 472.76625pt>
-File: 3-1graph243.jpg Graphic file (type jpg)
-
-<use 3-1graph243.jpg>
-Package pdftex.def Info: 3-1graph243.jpg used on input line 145.
-(pdftex.def)             Requested size: 398.33858pt x 184.1184pt.
-
-Overfull \hbox (53.33858pt too wide) in paragraph at lines 145--146
- [][] 
- []
-
-[5 <./chargeEtDech.png>]
-Overfull \hbox (4.19304pt too wide) in paragraph at lines 155--155
-[]\OT1/cmr/bx/n/12 5.3 Jus-ti-fi-ca-tion math^^Sematique du proc^^Sed^^Se de d^
-^Setermination
- []
-
-
-Overfull \hbox (24.69131pt too wide) detected at line 161
-\OML/cmm/m/it/10 P\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x\OT1/cmr/m/n/10 ) = \OMS/c
-msy/m/n/10 ^^@\OT1/cmr/m/n/10 3[] [] \OML/cmm/m/it/10 x[] \OT1/cmr/m/n/10 + 6[]
- [] \OML/cmm/m/it/10 x[] \OMS/cmsy/m/n/10 ^^@ \OT1/cmr/m/n/10 4[] [] \OML/cmm/m
-/it/10 x[] \OT1/cmr/m/n/10 + 2[] [] \OML/cmm/m/it/10 x[] \OMS/cmsy/m/n/10 ^^@ \
-OT1/cmr/m/n/10 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 0005 [] \OML/cmm/m/it/10 x[] 
-\OT1/cmr/m/n/10 + 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 0993 [] \OML/cmm/m/it/10 x
- \OT1/cmr/m/n/10 + 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 0667
- []
-
-[6 <./3-1graph243.jpg>] [7] <E244img1.jpg, id=43, 2698.08pt x 1525.7pt>
-File: E244img1.jpg Graphic file (type jpg)
-
-<use E244img1.jpg>
-Package pdftex.def Info: E244img1.jpg used on input line 205.
-(pdftex.def)             Requested size: 256.0748pt x 144.80331pt.
- <E244img2.jpg, id=44, 2698.08pt x 1525.7pt>
-File: E244img2.jpg Graphic file (type jpg)
-
-<use E244img2.jpg>
-Package pdftex.def Info: E244img2.jpg used on input line 214.
-(pdftex.def)             Requested size: 256.0748pt x 144.80331pt.
- [8 <./E244img1.jpg> <./E244img2.jpg>]
-Overfull \hbox (8.44502pt too wide) in paragraph at lines 236--241
+ [5 <./decharge.png>]
+Overfull \hbox (8.44502pt too wide) in paragraph at lines 179--184
 \OT1/cmr/m/n/10 Nous con-sta-tons que la valeur th^^Seorique est plus pe-tite q
 ue la valeur exp^^Serimentale.
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 267--269
+[6] [7]
+Underfull \hbox (badness 10000) in paragraph at lines 281--283
 
  []
 
-[9] (./rapport.aux)
+[8] (./rapport.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 3648 strings out of 494875
- 46886 string characters out of 6178748
- 107533 words of memory out of 5000000
- 6870 multiletter control sequences out of 15000+600000
+ 3635 strings out of 494875
+ 46645 string characters out of 6178748
+ 108532 words of memory out of 5000000
+ 6860 multiletter control sequences out of 15000+600000
  13542 words of font info for 51 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 39i,7n,43p,368b,231s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 39i,8n,43p,426b,231s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texl
@@ -803,14 +771,15 @@ s/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1
 /public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
 /amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
 ts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
-mr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pf
-b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr
-/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/
-texlive/texmf-dist/fonts/type1/public/amsfonts/euler/eurm10.pfb>
-Output written on rapport.pdf (9 pages, 2132309 bytes).
+mr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb>
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/
+share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/share/t
+exlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/
+texmf-dist/fonts/type1/public/amsfonts/euler/eurm10.pfb>
+Output written on rapport.pdf (8 pages, 228291 bytes).
 PDF statistics:
- 100 PDF objects out of 1000 (max. 8388607)
- 67 compressed objects within 1 object stream
+ 102 PDF objects out of 1000 (max. 8388607)
+ 69 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 31 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 21 words of extra memory for PDF output out of 10000 (max. 10000000)
 
